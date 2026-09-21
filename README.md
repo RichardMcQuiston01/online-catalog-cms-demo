@@ -1,6 +1,8 @@
-# Project Title
+# Online Catalog CMS Demo
 
 ## Overview
+
+Single Page Application (SPA) demo page demonstrating the features of of the online-catalog-cms NPM package(@richardmcquiston01/online-catalog-cms).  Deployable to Vercel.
 
 ## Getting Started
 
