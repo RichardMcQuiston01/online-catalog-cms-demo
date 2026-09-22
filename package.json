@@ -15,7 +15,7 @@
     "format:fix": "prettier --write ."
   },
   "dependencies": {
-    "@richardmcquiston01/online-catalog-cms": "^0.1.0"
+    "@richardmcquiston01/online-catalog-cms": "^0.1.1"
   },
   "devDependencies": {
     "@tailwindcss/vite": "^4.0.0",
