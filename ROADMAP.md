@@ -1,10 +1,7 @@
 # Roadmap
 
-- [x] Vite + TypeScript + Tailwind CSS SPA scaffold
-- [x] Product listing and create/edit pages backed by `OnlineCatalog` +
-      an in-memory adapter
-- [x] Floating "Buy Me a Coffee" donate card
-- [x] Vercel deployment config
+Completed work is tracked in [CHANGELOG.md](CHANGELOG.md). What's left:
+
 - [ ] Optional image upload demo via a `StorageAdapter` (currently
       image-by-URL only)
 - [ ] Swap the in-memory adapter for a hosted database adapter behind a
