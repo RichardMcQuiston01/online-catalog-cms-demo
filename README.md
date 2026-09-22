@@ -20,7 +20,7 @@ there is no server or database to stand up. It includes:
 
 ### Prerequisites
 
-- Node.js >= 18
+- Node.js 22.x (pinned in `package.json`'s `engines`, matching the Vercel deployment)
 - npm
 
 ### Installation
