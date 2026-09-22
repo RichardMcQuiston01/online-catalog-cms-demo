@@ -8,6 +8,11 @@
 /.next/
 /out/
 
+# vite
+/dist
+/dist-ssr
+*.local
+
 # production
 /build
 
