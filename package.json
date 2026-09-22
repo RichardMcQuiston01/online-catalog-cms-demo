@@ -1,0 +1,39 @@
+{
+  "name": "online-catalog-cms-demo",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Single Page Application demo for @richardmcquiston01/online-catalog-cms, deployable to Vercel",
+  "license": "Apache-2.0",
+  "author": "Richard McQuiston <richard.mcquiston01@gmail.com>",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit",
+    "format": "prettier --check .",
+    "format:fix": "prettier --write ."
+  },
+  "dependencies": {
+    "@richardmcquiston01/online-catalog-cms": "^0.1.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.0.0",
+    "@types/node": "^22.0.0",
+    "prettier": "^3.3.0",
+    "tailwindcss": "^4.0.0",
+    "typescript": "^5.6.0",
+    "vite": "^6.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/RichardMcQuiston01/online-catalog-cms-demo.git"
+  },
+  "bugs": {
+    "url": "https://github.com/RichardMcQuiston01/online-catalog-cms-demo/issues"
+  },
+  "homepage": "https://github.com/RichardMcQuiston01/online-catalog-cms-demo#readme"
+}
