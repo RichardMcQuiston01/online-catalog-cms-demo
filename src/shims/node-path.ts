@@ -2,9 +2,11 @@
  * Browser stand-in for `node:path`, pulled in statically by the
  * online-catalog-cms bundle. `join()` is called eagerly at module load time
  * by the SQL adapters (to build a migration file path this demo never
- * reads), so it must return a value rather than throw. `resolve`/`extname`
+ * reads), so it must return a value rather than throw. `resolve`/`extname`/`sep`
  * are only used inside adapter methods this demo never calls.
  */
+export const sep: string = '/';
+
 export function join(): string {
   return '/';
 }

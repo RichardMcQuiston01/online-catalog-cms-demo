@@ -7,7 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- Bumped `@richardmcquiston01/online-catalog-cms` to `^0.1.2`
+- Added a `fs/promises` browser shim and a `path.sep` export, which `0.1.2`
+  now imports for its server-only adapters
+
 ### Fixed
+
+- Image URL was silently dropped when editing a product that had no image
 
 - Pinned `engines.node` to `22.x` instead of an open-ended `>=18.0.0` range,
   which Vercel flagged as auto-upgrading on every new Node major release
