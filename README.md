@@ -2,26 +2,33 @@
 
 ## Overview
 
-Single Page Application (SPA) demo demonstrating the features of the
+This demo shows how the
 [`online-catalog-cms`](https://github.com/RichardMcQuiston01/online-catalog-cms)
-NPM package (`@richardmcquiston01/online-catalog-cms`). Built with Vite,
-TypeScript, and Tailwind CSS, and deployable to Vercel.
+package works (`@richardmcquiston01/online-catalog-cms` on NPM). That package
+helps you manage an online product catalog.
 
-The demo runs entirely in the browser: it composes the package's
-`OnlineCatalog` class with a small `InMemoryAdapter` (localStorage-backed) so
-there is no server or database to stand up. It includes:
+The demo is a single-page website that runs fully in your browser. It does not
+need a server or a database. Your products are saved in your browser's
+`localStorage`, so only you can see them. It is built with Vite, TypeScript,
+and Tailwind CSS, and it can be deployed to Vercel.
 
-- A product listing page with search, category, and price filters (`index.html`)
-- A create/edit form with a contenteditable rich-text toolbar (`editor.html`)
-- WCAG 2.1 AA accessibility: skip link, `aria-live` status regions, visible
-  focus indicators, and sufficient color contrast
+What you can do in the demo:
+
+- Browse products on the home page (`index.html`). You can search by name or
+  SKU, pick a category, and filter by price.
+- Add and edit products on the editor page (`editor.html`). The form has a
+  rich-text toolbar for the description and an optional image URL.
+- Use it with a keyboard or screen reader. The pages follow the WCAG 2.1 AA
+  accessibility rules: a skip link, live status messages, clear focus outlines,
+  and strong color contrast.
 
 ## Getting Started
 
 ### Prerequisites
 
-- Node.js 22.x (pinned in `package.json`'s `engines`, matching the Vercel deployment)
-- npm
+- Node.js 22.x. Run `node -v` to check. This matches the Vercel deployment and
+  is set in the `engines` field of `package.json`.
+- npm (it comes with Node.js)
 
 ### Installation
 
@@ -32,32 +39,40 @@ npm install
 ### Usage
 
 ```sh
-npm run dev        # start the Vite dev server
-npm run build       # type-check, then build the static site to dist/
+npm run dev         # start the Vite dev server
+npm run build       # type-check, then build the site into dist/
 npm run preview     # preview the production build locally
-npm run typecheck   # type-check without emitting
+npm run typecheck   # type-check without building
 npm run format      # check formatting with Prettier
+npm run format:fix  # fix formatting with Prettier
 ```
 
 ### Examples
 
-Open the dev server (default `http://localhost:5173`), then:
+Start the dev server with `npm run dev`, then open
+`http://localhost:5173` and try this:
 
-1. Visit the home page to browse the seeded categories (Electronics,
-   Clothing, Books) — the product list starts empty.
-2. Click **+ Add Product**, fill in a name and price (in cents), and save —
-   you're redirected back to the product grid with your new card.
-3. Click **Edit** on a card to update it, or **Delete** to remove it.
+1. Look at the home page. The categories (Electronics, Clothing, and Books)
+   are already there, but the product list starts empty.
+2. Click **+ Add Product**. Enter a name and a price in cents. For example,
+   `1999` means $19.99. You can also add an image URL, which is optional.
+3. Click **Save product**. You will go back to the home page and see your new product
+   card.
+4. Click **Edit** on a card to change it, or **Delete** to remove it.
 
-All data is stored in `localStorage`, so it persists across reloads but is
-local to your browser.
+Your data is saved in your browser's `localStorage`. It stays after you reload
+the page, but it never leaves your browser. To start over, clear this site's
+data in your browser settings.
 
 ### Deploying to Vercel
 
-This repo includes a `vercel.json` and is auto-detected as a Vite project.
-To deploy: import the repository in the Vercel dashboard, or run
-`vercel --prod` from this directory with the Vercel CLI. No environment
-variables are required.
+This repo includes a `vercel.json` file, and Vercel detects it as a Vite
+project. You do not need any environment variables.
+
+1. Import the repository in the Vercel dashboard.
+2. Click **Deploy**.
+
+You can also run `vercel --prod` from this folder if you use the Vercel CLI.
 
 ## Buy Me a Coffee
 
@@ -69,7 +84,7 @@ If this app, code, or repository has helped you or someone you know, please cons
 
 ## License
 
-Apache 2
+Apache License 2.0. See [LICENSE](LICENSE).
 
 ## Copyright
 
