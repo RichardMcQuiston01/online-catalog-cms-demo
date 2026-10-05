@@ -13,6 +13,8 @@ export default defineConfig({
       // shims let the unused code paths resolve at build time without
       // pulling in Node polyfills.
       crypto: resolve(__dirname, 'src/shims/node-crypto.ts'),
+      // Must come before `fs`: string aliases match by prefix.
+      'fs/promises': resolve(__dirname, 'src/shims/node-fs-promises.ts'),
       fs: resolve(__dirname, 'src/shims/node-fs.ts'),
       path: resolve(__dirname, 'src/shims/node-path.ts'),
       url: resolve(__dirname, 'src/shims/node-url.ts'),
