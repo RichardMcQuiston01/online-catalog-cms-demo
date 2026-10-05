@@ -2,6 +2,8 @@
 
 ## Overview
 
+**Live demo:** [online-catalog-cms-demo.vercel.app](https://online-catalog-cms-demo.vercel.app)
+
 This demo shows how the
 [`online-catalog-cms`](https://github.com/RichardMcQuiston01/online-catalog-cms)
 package works (`@richardmcquiston01/online-catalog-cms` on NPM). That package

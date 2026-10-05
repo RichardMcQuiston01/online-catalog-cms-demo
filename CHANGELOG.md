@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- Added a link to the live demo in the README
 - Bumped `@richardmcquiston01/online-catalog-cms` to `^0.1.2`
 - Added a `fs/promises` browser shim and a `path.sep` export, which `0.1.2`
   now imports for its server-only adapters
