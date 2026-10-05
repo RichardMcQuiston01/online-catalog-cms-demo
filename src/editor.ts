@@ -243,33 +243,24 @@ async function handleSubmit(catalog: OnlineCatalog): Promise<void> {
     const imageUrl = imageUrlInput.value.trim();
     const imageAlt = imageAltInput.value.trim();
 
-    if (imageUrl) {
-      if (editingId && originalImages[0]) {
-        if (originalImages[0].url !== imageUrl) {
-          await catalog.images.delete(originalImages[0].id);
-          await catalog.images.addUrl({
-            productId: product.id,
-            url: imageUrl,
-            altText: imageAlt || product.name,
-          });
-        } else if (imageAlt && originalImages[0].altText !== imageAlt) {
-          // No update method on images — delete and recreate.
-          await catalog.images.delete(originalImages[0].id);
-          await catalog.images.addUrl({
-            productId: product.id,
-            url: imageUrl,
-            altText: imageAlt,
-          });
-        }
-      } else if (!editingId) {
-        await catalog.images.addUrl({
-          productId: product.id,
-          url: imageUrl,
-          altText: imageAlt || product.name,
-        });
+    const existingImage: Image | undefined = originalImages[0];
+    const imageChanged: boolean =
+      !existingImage ||
+      existingImage.url !== imageUrl ||
+      (imageAlt !== '' && existingImage.altText !== imageAlt);
+
+    if (imageUrl && imageChanged) {
+      // No update method on images — delete the old one and recreate.
+      if (existingImage) {
+        await catalog.images.delete(existingImage.id);
       }
-    } else if (editingId && originalImages[0]) {
-      await catalog.images.delete(originalImages[0].id);
+      await catalog.images.addUrl({
+        productId: product.id,
+        url: imageUrl,
+        altText: imageAlt || existingImage?.altText || product.name,
+      });
+    } else if (!imageUrl && existingImage) {
+      await catalog.images.delete(existingImage.id);
     }
 
     showToast(editingId ? 'Product updated.' : 'Product created.');
