@@ -10,9 +10,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - Added a link to the live demo in the README
-- Bumped `@richardmcquiston01/online-catalog-cms` to `^0.1.2`
-- Added a `fs/promises` browser shim and a `path.sep` export, which `0.1.2`
-  now imports for its server-only adapters
+- Bumped `@richardmcquiston01/online-catalog-cms` to `^0.2.0`, which has a
+  browser-safe entry point that bundlers pick automatically
+
+### Removed
+
+- The `src/shims/*` stand-ins for Node built-ins and the matching
+  `resolve.alias` block in `vite.config.ts`. They are no longer needed now
+  that the package ships a browser entry point without Node built-ins
 
 ### Fixed
 
