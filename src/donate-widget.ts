@@ -6,7 +6,7 @@
 import './donate-widget.css';
 
 const STORAGE_KEY = 'donate-card-dismissed';
-const DONATE_URL = 'https://donate.stripe.com/00w5kD3Gj1Xo9v7gVOcs800';
+const DONATE_URL = 'https://ko-fi.com/P1V529Z7ZP';
 
 function readDismissed(): boolean {
   try {
@@ -52,7 +52,7 @@ export function mountDonateCard(): void {
     </p>
 
     <div class="donate-card__qr">
-      <img src="/donate.svg" alt="QR code linking to the Stripe donation page" width="180" height="180" />
+      <img src="/donate.svg" alt="QR code linking to the Ko-fi donation page" width="180" height="180" />
     </div>
 
     <a
@@ -60,8 +60,8 @@ export function mountDonateCard(): void {
       href="${DONATE_URL}"
       target="_blank"
       rel="noopener noreferrer"
-      aria-label="Donate via Stripe, opens in a new tab"
-    >Donate via Stripe <span aria-hidden="true">&rarr;</span></a>
+      aria-label="Support on Ko-fi, opens in a new tab"
+    >Support on Ko-fi <span aria-hidden="true">&rarr;</span></a>
   `;
 
   document.body.appendChild(card);
